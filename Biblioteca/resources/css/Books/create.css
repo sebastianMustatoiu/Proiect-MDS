@@ -1,0 +1,38 @@
+/* Stilurile pentru secțiunea de login */
+section {
+    height: 100vh; /* Setează înălțimea la 100% din înălțimea vizuală a ecranului */
+    display: flex;
+    justify-content: center; /* Centrează orizontal conținutul */
+    align-items: center; /* Centrează vertical conținutul */
+}
+
+/* Stilurile pentru formular */
+.form-box {
+    width: 400px; /* Specifică o lățime fixă pentru formular */
+    padding: 20px; /* Adaugă un padding pentru a separa conținutul de margine */
+    background: lightblue;
+    opacity: 0.9; /* Valoarea opacității trebuie specificată între 0 și 1 */
+    border-radius: 10px; /* Adaugă colțuri rotunjite la formular */
+}
+
+/* Stilurile pentru buton */
+.addBook-form button {
+    background: #2563eb;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.addBook-form input{
+    width: 50%;
+    height: 24px;
+}
+
+.addBook-form button:hover {
+    background-color: #1d4ed8;
+}
