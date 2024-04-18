@@ -44,8 +44,8 @@ class BookController extends Controller
         $book->publication_date = $validatedData['publication_date'];
         $image = $validatedData['image'];
         $imageName = $image->getClientOriginalName();
-        $imagePath = $image->storeAs('images', $imageName, 'public');
-        $book->image = $imagePath;
+        $image->storeAs('images', $imageName, 'public');
+        $book->image = 'storage/images/' . $imageName;
 
         $book->save();
         return Redirect(route('books.index'));
