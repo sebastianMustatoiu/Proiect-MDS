@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useForm } from '@inertiajs/react';
-import '/resources/css/Books/create.module.css'
+import styles from '/resources/css/Books/create.module.css'
 
 export default function Create() {
     const { data, setData, post, reset, errors } = useForm({
@@ -19,11 +19,11 @@ export default function Create() {
 
     return (
         <section>
-            <div className="form-box">
+            <div className={styles.formBox}>
                 <div>
                     <h1>Add Book</h1>
-                    <form className="addBook-form" onSubmit={handleSubmit}>
-                        <div className="title-input">
+                    <form className={styles.addBookForm} onSubmit={handleSubmit}>
+                        <div className={styles.titleInput}>
                             <label htmlFor="title">Title</label><br />
                             <input
                                 type="text"
@@ -36,7 +36,7 @@ export default function Create() {
                             <div className="text-red-500">{errors.title}</div>
                         )}
 
-                        <div className="author-input">
+                        <div className={styles.authorInput}>
                             <label htmlFor="author">Author</label><br />
                             <input
                                 type="text"
@@ -49,7 +49,7 @@ export default function Create() {
                             <div className="text-red-500">{errors.author}</div>
                         )}
 
-                        <div className="publication_date-input">
+                        <div className={styles.publicationDateInput}>
                             <label htmlFor="publication_date">Publication Date</label><br />
                             <input
                                 type="date"
@@ -62,7 +62,7 @@ export default function Create() {
                             <div className="text-red-500">{errors.publication_date}</div>
                         )}
 
-                        <div className="image-input">
+                        <div className={styles.imageInput}>
                             <label htmlFor="image">Image</label><br />
                             <input
                                 type="file"

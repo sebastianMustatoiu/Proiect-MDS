@@ -3,11 +3,11 @@
 body {
     background-color: #a5d0f8;
 }
-.books-container {
+.booksContainer {
     padding: 20px;
 }
 
-.page-title {
+.pageTitle {
     font-size: 2.5em;
     color: rgb(1, 1, 45);
     font-family: "Copperplate Gothic", copperplate;
@@ -19,13 +19,13 @@ body {
     margin-bottom: 40px;
 }
 
-.books-grid {
+.booksGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.book-card {
+.bookCard {
     /*border: 3px solid #746990;
     border-radius: 3px;*/
     padding: 15px;
@@ -33,21 +33,21 @@ body {
     height: 385px;
 }
 
-.book-card img {
+.bookCard img {
     max-width: 205;
     height: 310px;
     margin-bottom: 10px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.6);
 }
 
-.book-details {
+.bookDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.book-title {
+.bookTitle {
     font-size: 1.2em;
     color: #000000;
     margin-bottom: 5px;
@@ -55,13 +55,13 @@ body {
 
 }
 
-.book-author {
+.bookAuthor {
     font-size: 1.3em;
     color: #000000;
     margin: 0;
 }
 
-.book-title-italic {
+.bookTitleItalic {
     font-style: italic;
     font-family: "Copperplate Gothic", copperplate;
     font-size: 1.2  em
