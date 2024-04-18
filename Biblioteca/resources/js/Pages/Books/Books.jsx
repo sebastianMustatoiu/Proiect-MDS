@@ -1,7 +1,7 @@
 import { Link, Head } from '@inertiajs/react';
-import '/resources/css/Books/books.css';
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
+import styles from '/resources/css/Books/books.module.css';
 import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
+import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
 
 export default function Books({ books, auth }) {
     const pageContent = () => {
@@ -15,12 +15,11 @@ export default function Books({ books, auth }) {
     return (
         <>
             {auth.user ? (
-                <AuthenticatedLayout
+                <OurAuthenticatedLayout
                     user={auth.user}
-
                 >
                     {pageContent()}
-                </AuthenticatedLayout>
+                </OurAuthenticatedLayout>
             ) : (
                 <OurGuestLayout>
                     {pageContent()}

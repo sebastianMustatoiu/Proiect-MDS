@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useForm } from '@inertiajs/react';
-import '/resources/css/Books/create.css'
+import '/resources/css/Books/create.module.css'
 
 export default function Create() {
     const { data, setData, post, reset, errors } = useForm({
