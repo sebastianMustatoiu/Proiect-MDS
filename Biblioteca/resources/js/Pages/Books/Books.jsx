@@ -9,10 +9,12 @@ export default function Books({ books }) {
             <div className="books-grid">
                 {books.map((book) => (
                     <div key={book.id} className="book-card">
-                        <img src={book.coverUrl} />
+                        <img src={book.image} />
                         <div className="book-details">
-                            <h2 className="book-title">{book.title}</h2>
-                            <p className="book-author">{book.author}</p>
+                            <p className="book-author">
+                                {book.author}, 
+                                <span className="book-title-italic"> {book.title}</span>
+                            </p>
                         </div>
                     </div>
                 ))}
