@@ -5,13 +5,13 @@ export default function OurGuestLayout( {children} ) {
         <>
             <nav className={styles.menu}>
                 <div className={styles.leftButtons}>
-                    <Link href={route('books.index')}> Home </Link>
-                    <Link href={route('books.create')}> Add </Link>
+                    <Link href={route('books.index')}> HOME </Link>
+                    <Link href={route('books.create')}> ADD </Link>
                 </div>
 
                 <div className={styles.rightButtons}>
-                   <Link href={route('login')}> Login </Link>
-                    <Link href={route('register')}> Register </Link>
+                   <Link href={route('login')}> LOGIN </Link>
+                    <Link href={route('register')}> REGISTER </Link>
                 </div>
             </nav>
 
