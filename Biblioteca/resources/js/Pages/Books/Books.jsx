@@ -1,9 +1,33 @@
 import { Link, Head } from '@inertiajs/react';
 import '/resources/css/Books/books.css';
-export default function Books( {books} ) {
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
+import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
+
+export default function Books({ books, auth }) {
+    const pageContent = () => {
+        return (
+            <>
+                <h1> Pagina cu cărți</h1>
+                <img src='storage/images/bug72819.jpg'/>
+            </>
+    )
+    };
     return (
         <>
-            <h1> Pagina cu carti </h1>
+            {auth.user ? (
+                <AuthenticatedLayout
+                    user={auth.user}
+
+                >
+                    {pageContent()}
+                </AuthenticatedLayout>
+            ) : (
+                <OurGuestLayout>
+                    {pageContent()}
+                </OurGuestLayout>
+
+
+            )}
         </>
     );
 }
