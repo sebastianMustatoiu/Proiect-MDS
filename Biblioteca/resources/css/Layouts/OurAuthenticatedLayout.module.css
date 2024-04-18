@@ -1,0 +1,72 @@
+.menu {
+    background-color: mediumpurple;
+    height: 60px;
+    width: 100%;
+    z-index: 1;
+}
+
+.leftButtons a{
+    float: left;
+    margin-right: auto;
+    font-size: 1.4em;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    background-color: rebeccapurple;
+}
+
+.dropDown{
+    width: 220px;
+    position: relative;
+    float: right;
+    color: white;
+    font-size: 1.4em;
+    padding: 13px 20px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.dropDown:hover{
+    color: #e2e8f0;
+    cursor: pointer;
+}
+
+.dropDownContent {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: mediumpurple;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropDown:hover .dropDownContent {
+    display: block;
+}
+
+.dropDownContent a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropDownContent a:hover {
+    background-color: rebeccapurple;
+}
+
+.icon{
+    position: absolute;
+    top: 18px;
+
+}
