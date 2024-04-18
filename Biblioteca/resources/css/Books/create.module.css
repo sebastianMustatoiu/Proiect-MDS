@@ -4,15 +4,17 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #a5d0f8;
 }
 
 
 .formBox {
     width: 400px;
     padding: 20px;
-    background: lightblue;
+    background: rebeccapurple;
     opacity: 0.9;
     border-radius: 10px;
+    color: white;
 }
 
 

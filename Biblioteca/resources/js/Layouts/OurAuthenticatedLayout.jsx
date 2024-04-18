@@ -9,6 +9,7 @@ export default function OurAuthenticatedLayout( {user, children} ) {
          <nav className={styles.menu}>
                  <div className={styles.leftButtons}>
                  <Link href={route('books.index')}> Home </Link>
+                     <Link href={route('books.create')}> Add </Link>
                  </div>
                      <div className={styles.dropDown}>
                          {user.name}
