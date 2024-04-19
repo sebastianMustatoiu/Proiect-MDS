@@ -33,6 +33,7 @@ section {
 .addBookForm input{
     width: 50%;
     height: 24px;
+    color: black;
 }
 
 .addBookForm button:hover {
