@@ -13,13 +13,13 @@ export default function OurAuthenticatedLayout( {user, children} ) {
                  </div>
                      <div className={styles.dropDown}>
                          {user.name}
-                         <ArrowDownOutline
+                        {/* <ArrowDownOutline
                              color={'#00000'}
                              title={''}
                              height="21px"
                              width="21px"
                              className={styles.icon}
-                         />
+    />*/}
                         <div className={styles.dropDownContent}>
                             <Link href={route('profile.edit')}> Profile </Link>
                             <Link method="post" href={route('logout')}> Log out </Link>
