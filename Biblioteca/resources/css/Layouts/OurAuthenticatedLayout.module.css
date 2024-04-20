@@ -1,4 +1,6 @@
 .menu {
+    display: flex;
+    flex-direction: row;
     background-color: mediumpurple;
     height: 60px;
     width: 100%;
@@ -24,9 +26,9 @@
 }
 
 .dropDown{
-    width: 220px;
+    margin-left: auto;
+    width: auto;
     position: relative;
-    float: right;
     color: white;
     font-size: 1.4em;
     padding: 13px 20px;
