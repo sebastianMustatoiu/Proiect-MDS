@@ -21,8 +21,9 @@ body {
 
 .booksGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    place-items: center;
 }
 
 .bookCard {
@@ -30,15 +31,19 @@ body {
     border-radius: 3px;*/
     padding: 15px;
     text-align: center;
-    height: 385px;
+    height: 43vh;
+    min-height: 280px;
+    max-height: 350px;
 }
 
 .bookCard img {
-    max-width: 205;
-    height: 310px;
+    max-width: 205px;
+    height: 100%;
+    width: 100%;
     margin-bottom: 10px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.6);
 }
+
 
 .bookDetails {
     display: flex;
@@ -64,6 +69,6 @@ body {
 .bookTitleItalic {
     font-style: italic;
     font-family: "Copperplate Gothic", copperplate;
-    font-size: 1.2  em
+    font-size: 1.2em;
 }
 
