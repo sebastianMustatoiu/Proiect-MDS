@@ -13,6 +13,7 @@ export default function OurAuthenticatedLayout( {user, children} ) {
                  </div>
                      <div className={styles.dropDown}>
                          {user.name}
+                         <span className={styles.arrow} >&darr; </span>
                         {/* <ArrowDownOutline
                              color={'#00000'}
                              title={''}

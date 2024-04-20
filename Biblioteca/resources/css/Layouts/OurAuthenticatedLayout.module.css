@@ -67,8 +67,6 @@
     background-color: rebeccapurple;
 }
 
-.icon{
-    position: absolute;
-    top: 20px;
-
+.arrow{
+    margin-left: 8px;
 }
