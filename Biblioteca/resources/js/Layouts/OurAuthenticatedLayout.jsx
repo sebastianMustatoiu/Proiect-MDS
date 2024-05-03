@@ -4,9 +4,23 @@ import {Link} from "@inertiajs/react";
 export default function OurAuthenticatedLayout( {user, children} ) {
     return (
         <>
-         <nav className={styles.menu}>
-                 <div className={styles.leftButtons}>
-                 <Link href={route('books.index')}> Home </Link>
+            <head>
+                <title> Biblioteca </title>
+                <link rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0"/>
+            </head>
+            <div className={styles.headerSection}>
+                <div className={styles.headerTitle}> BIBLIOTECA</div>
+                <div className={styles.searchBar}>
+                    <input type='text' placeholder='What book would you like to read?' name='search'/>
+                </div>
+                <div className={`${styles.iconLarge} material-symbols-outlined`}>
+                    account_circle
+                </div>
+            </div>
+            <nav className={styles.menu}>
+                <div className={styles.leftButtons}>
+                <Link href={route('books.index')}> Home </Link>
                      <Link href={route('books.create')}> Add </Link>
                  </div>
                      <div className={styles.dropDown}>
