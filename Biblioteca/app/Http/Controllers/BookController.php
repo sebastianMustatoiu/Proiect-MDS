@@ -14,13 +14,14 @@ class BookController extends Controller
      */
     public function index()
     {
+        $books = Book::query()->paginate(12)->onEachSide(1);
+
         return Inertia::render('Books/Books', [
-            'books' => book::all(),
-            'auth' => [
-                'user' => Auth::user()
-            ]
+            'books' => $books->items(),
+            'paginator' => $books
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
