@@ -3,13 +3,13 @@ import { Link, Head } from '@inertiajs/react';
 import styles from '/resources/css/Books/books.module.css';
 import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
 import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
+import {Pagination} from "@/Components/Pagination.jsx";
 
 export default function Books({ books, auth }) {
     const content = (
         <div className={styles.booksContainer}>
-            {/*    <h1 className={styles.pageTitle}> Biblioteca: </h1> */}
             <div className={styles.booksGrid}>
-                {books.map((book) => (
+                {books.data.map((book) => (
                     <div key={book.id} className={styles.bookCard}>
                         <img src={book.image} alt={book.title}/>
                         <div className={styles.bookDetails}>
@@ -23,17 +23,20 @@ export default function Books({ books, auth }) {
             </div>
         </div>
     )
-    return (
-        auth.user ?
-            <OurAuthenticatedLayout
-                user={auth.user}
-            >
-                {content}
-            </OurAuthenticatedLayout>
-            :
-            <OurGuestLayout>
-                {content}
-            </OurGuestLayout>
 
+    return (
+        <>
+            {auth.user ? (
+                <OurAuthenticatedLayout user={auth.user}>
+                    {content}
+                </OurAuthenticatedLayout>
+            ) : (
+                <OurGuestLayout>
+                    {content}
+                </OurGuestLayout>
+            )}
+
+            <Pagination links={books.links} currentPage={books.current_page} />
+        </>
     );
 }

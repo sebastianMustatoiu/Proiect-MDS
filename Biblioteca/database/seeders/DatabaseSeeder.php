@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now()
         ]);
 
-        book::factory(30)->create();
+        book::factory(100)->create();
     }
 }

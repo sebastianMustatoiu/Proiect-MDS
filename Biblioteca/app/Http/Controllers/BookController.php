@@ -17,8 +17,7 @@ class BookController extends Controller
         $books = Book::query()->paginate(12)->onEachSide(1);
 
         return Inertia::render('Books/Books', [
-            'books' => $books->items(),
-            'paginator' => $books
+            'books' => $books
         ]);
     }
 
