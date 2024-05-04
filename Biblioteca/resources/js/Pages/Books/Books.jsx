@@ -7,20 +7,26 @@ import {Pagination} from "@/Components/Pagination.jsx";
 
 export default function Books({ books, auth, activeMenu }) {
     const content = (
-        <div className={styles.booksContainer}>
-            <div className={styles.booksGrid}>
-                {books.data.map((book) => (
-                    <div key={book.id} className={styles.bookCard}>
-                        <img src={book.image} alt={book.title}/>
-                        <div className={styles.bookDetails}>
-                            <p className={styles.bookAuthor}>
-                                {book.author},
-                                <span className={styles.bookTitleItalic}> {book.title}</span>
-                            </p>
+        <div className={styles.pageContent}>
+            <div className={styles.booksContainer}>
+                <div className={styles.booksGrid}>
+                    {books.data.map((book) => (
+                        <div key={book.id} className={styles.bookCard}>
+                            <img src={book.image} alt={book.title}/>
+                            <div className={styles.bookDetails}>
+                                <p className={styles.bookAuthor}>
+                                    {book.author},
+                                    <span className={styles.bookTitleItalic}> {book.title}</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+                <span className={styles.paginationContainer}>
+                <Pagination links={books.links} currentPage={books.current_page} />
+                </span>
             </div>
+            <div className={styles.filterContainer}></div>
         </div>
     )
 
@@ -31,12 +37,10 @@ export default function Books({ books, auth, activeMenu }) {
                     {content}
                 </OurAuthenticatedLayout>
             ) : (
-                <OurGuestLayout>
+                <OurGuestLayout activeMenu={"Home"}>
                     {content}
                 </OurGuestLayout>
             )}
-
-            <Pagination links={books.links} currentPage={books.current_page} />
         </>
     );
 }

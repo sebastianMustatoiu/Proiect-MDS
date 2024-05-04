@@ -1,6 +1,6 @@
 import {Link} from "@inertiajs/react";
 import styles from '/resources/css/Layouts/OurGuestLayout.module.css'
-export default function OurGuestLayout( {children} ) {
+export default function OurGuestLayout( {children, activeMenu} ) {
     return (
         <>
             <head>
@@ -22,8 +22,8 @@ export default function OurGuestLayout( {children} ) {
             </div>
             <nav className={styles.menu}>
                 <div className={styles.leftButtons}>
-                    <Link href={route('books.index')}> HOME </Link>
-                    <Link href={route('books.create')}> ADD </Link>
+                    <Link href={route('books.index')} className={activeMenu === "Home" ? styles.activeMenu : null}> Home </Link>
+                    <Link href={route('books.create')} className={activeMenu === "Add" ? styles.activeMenu : null}> Add </Link>
                 </div>
 
                 <div className={styles.rightButtons}>

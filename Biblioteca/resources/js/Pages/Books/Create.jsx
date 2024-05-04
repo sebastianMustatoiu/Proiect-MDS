@@ -90,7 +90,7 @@ const content = (
                 {content}
             </OurAuthenticatedLayout>
             :
-            <OurGuestLayout>
+            <OurGuestLayout activeMenu={"Add"}>
                 {content}
             </OurGuestLayout>
     );

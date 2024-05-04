@@ -13,7 +13,7 @@
     margin-left: 30px;
     margin-right: 300px;
     width: 15vw;
-    
+
 }
 
 .iconLarge{
@@ -51,6 +51,11 @@
     padding: 20px 60px;
 }
 
+.searchBar input:focus{
+    border-color: rebeccapurple;
+}
+
+
 .menu {
     background-color: #D3A0A0;
     height: 45px;
@@ -81,4 +86,8 @@
 .rightButtons a{
     float: right;
     margin-left: auto;
+}
+
+.activeMenu{
+    background-color: #bf7373;
 }
