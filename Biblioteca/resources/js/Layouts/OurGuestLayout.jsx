@@ -9,7 +9,7 @@ export default function OurGuestLayout( {children} ) {
                       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0"/>
             </head>
             <div className={styles.headerSection}>
-                <div className={styles.headerTitle}> BIBLIOTECA</div>
+                <Link href={route('books.index')} className={styles.headerTitle}> BIBLIOTECA</Link>
                 <form className={styles.searchBar}>
                     <input type='text' placeholder='What book would you like to read?' name='search'/>
                 </form>

@@ -10,7 +10,7 @@ export default function OurAuthenticatedLayout( {user, children, activeMenu} ) {
                       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0"/>
             </head>
             <div className={styles.headerSection}>
-                <div className={styles.headerTitle}> BIBLIOTECA</div>
+                <Link href={route('books.index')} className={styles.headerTitle}> BIBLIOTECA</Link>
                 <form className={styles.searchBar}>
                     <div className={`${styles.iconSearch} material-symbols-outlined`}>
                         search
