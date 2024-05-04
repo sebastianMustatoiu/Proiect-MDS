@@ -1,7 +1,10 @@
 import styles from '/resources/css/Layouts/OurAuthenticatedLayout.module.css';
-import {Link} from "@inertiajs/react";
+import {Link, router, usePage} from "@inertiajs/react";
 
 export default function OurAuthenticatedLayout( {user, children, activeMenu} ) {
+
+    const {queryParams} = usePage().props
+
     return (
         <>
             <head>
@@ -15,7 +18,11 @@ export default function OurAuthenticatedLayout( {user, children, activeMenu} ) {
                     <div className={`${styles.iconSearch} material-symbols-outlined`}>
                         search
                     </div>
-                    <input type='text' placeholder='What book would you like to read?' name='search'/>
+                    <input type='text'
+                           placeholder='What book would you like to read?'
+                           name='search'
+                           defaultValue={queryParams?.search ? queryParams.search : ''}
+                    />
                 </form>
                 <div className={`${styles.iconLarge} material-symbols-outlined`}>
                     account_circle

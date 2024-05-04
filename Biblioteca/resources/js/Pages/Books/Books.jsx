@@ -5,7 +5,8 @@ import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
 import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
 import {Pagination} from "@/Components/Pagination.jsx";
 
-export default function Books({ books, auth, activeMenu }) {
+export default function Books({ books, auth}) {
+
     const content = (
         <div className={styles.pageContent}>
             <div className={styles.booksContainer}>

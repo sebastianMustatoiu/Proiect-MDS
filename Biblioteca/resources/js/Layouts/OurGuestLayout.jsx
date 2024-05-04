@@ -1,6 +1,9 @@
-import {Link} from "@inertiajs/react";
+import {Link, usePage} from "@inertiajs/react";
 import styles from '/resources/css/Layouts/OurGuestLayout.module.css'
 export default function OurGuestLayout( {children, activeMenu} ) {
+
+    const {queryParams} = usePage().props
+
     return (
         <>
             <head>
@@ -14,7 +17,11 @@ export default function OurGuestLayout( {children, activeMenu} ) {
                     <div className={`${styles.iconSearch} material-symbols-outlined`}>
                         search
                     </div>
-                    <input type='text' placeholder='What book would you like to read?' name='search'/>
+                    <input type='text'
+                           placeholder='What book would you like to read?'
+                           name='search'
+                           defaultValue={queryParams?.search ? queryParams.search : ''}
+                    />
                 </form>
                 <div className={`${styles.iconLarge} material-symbols-outlined`}>
                     account_circle

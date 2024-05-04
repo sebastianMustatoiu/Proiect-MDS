@@ -14,10 +14,19 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::query()->paginate(12)->onEachSide(1);
+        $query = book::query();
+
+        if(request('search')){
+            $query->where('title','like','%'.request('search').'%')
+                ->orWhere('author','like','%'.request('search').'%');
+        }
+
+
+        $books = $query->paginate(12)->onEachSide(1);
 
         return Inertia::render('Books/Books', [
-            'books' => $books
+            'books' => $books,
+            'queryParams' => request()->query() ?: null
         ]);
     }
 
