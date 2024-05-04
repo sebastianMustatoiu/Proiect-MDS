@@ -30,7 +30,6 @@
     font-size: 40px !important;
     position: relative;
     left: 50px;
-
 }
 
 .searchBar{
@@ -44,7 +43,7 @@
 .searchBar input{
     width: 40vw;
     height: 50px;
-    font-size: 1.8em;
+    font-size: 1.8vw;
     border-color: black;
     background-color: #EAE4FF;
     border-radius: 25px;

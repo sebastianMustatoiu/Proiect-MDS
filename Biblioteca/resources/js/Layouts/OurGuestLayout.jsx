@@ -11,6 +11,9 @@ export default function OurGuestLayout( {children} ) {
             <div className={styles.headerSection}>
                 <Link href={route('books.index')} className={styles.headerTitle}> BIBLIOTECA</Link>
                 <form className={styles.searchBar}>
+                    <div className={`${styles.iconSearch} material-symbols-outlined`}>
+                        search
+                    </div>
                     <input type='text' placeholder='What book would you like to read?' name='search'/>
                 </form>
                 <div className={`${styles.iconLarge} material-symbols-outlined`}>
