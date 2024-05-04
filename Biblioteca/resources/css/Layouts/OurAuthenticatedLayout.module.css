@@ -26,10 +26,21 @@
     padding: 20px;
 }
 
+.iconSearch{
+    font-size: 40px !important;
+    position: relative;
+    left: 50px;
+
+}
+
 .searchBar{
+    display: flex;
     position: absolute;
     left: 30vw;
+    align-items: center;
+
 }
+
 .searchBar input{
     width: 40vw;
     height: 50px;
@@ -38,6 +49,9 @@
     background-color: #EAE4FF;
     border-radius: 25px;
     padding: 20px 60px;
+}
+.searchBar input:focus{
+    border-color: rebeccapurple;
 }
 
 .menu {
@@ -60,8 +74,6 @@
     color: black;
     text-align: center;
     text-decoration: none;
-    
-
 }
 
 .menu a:hover{
@@ -112,4 +124,8 @@
 
 .arrow{
     margin-left: 8px;
+}
+
+.activeMenu{
+    background-color: #bf7373;
 }

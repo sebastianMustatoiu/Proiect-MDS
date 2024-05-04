@@ -5,7 +5,7 @@ import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
 import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
 import {Pagination} from "@/Components/Pagination.jsx";
 
-export default function Books({ books, auth }) {
+export default function Books({ books, auth, activeMenu }) {
     const content = (
         <div className={styles.booksContainer}>
             <div className={styles.booksGrid}>
@@ -27,7 +27,7 @@ export default function Books({ books, auth }) {
     return (
         <>
             {auth.user ? (
-                <OurAuthenticatedLayout user={auth.user}>
+                <OurAuthenticatedLayout user={auth.user} activeMenu={"Home"}>
                     {content}
                 </OurAuthenticatedLayout>
             ) : (

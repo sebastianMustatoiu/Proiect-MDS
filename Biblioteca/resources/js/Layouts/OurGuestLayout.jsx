@@ -10,9 +10,9 @@ export default function OurGuestLayout( {children} ) {
             </head>
             <div className={styles.headerSection}>
                 <div className={styles.headerTitle}> BIBLIOTECA</div>
-                <div className={styles.searchBar}>
+                <form className={styles.searchBar}>
                     <input type='text' placeholder='What book would you like to read?' name='search'/>
-                </div>
+                </form>
                 <div className={`${styles.iconLarge} material-symbols-outlined`}>
                     account_circle
                 </div>

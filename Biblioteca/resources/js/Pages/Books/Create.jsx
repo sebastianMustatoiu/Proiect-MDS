@@ -85,6 +85,7 @@ const content = (
         auth.user ?
             <OurAuthenticatedLayout
                 user={auth.user}
+                activeMenu={"Add"}
             >
                 {content}
             </OurAuthenticatedLayout>
