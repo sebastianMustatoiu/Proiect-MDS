@@ -22,7 +22,7 @@ class BookController extends Controller
         }
 
 
-        $books = $query->paginate(12)->onEachSide(1);
+        $books = $query->paginate(20)->onEachSide(1);
 
         return Inertia::render('Books/Books', [
             'books' => $books,
