@@ -33,7 +33,7 @@ export function Pagination({ links, currentPage }) {
                 />
             ))}
             { currentPage <= links.length - 5 ? <span className={styles.pageButton}> ... </span> : null}
-            {lastIndex != 1 ?
+            {lastIndex !== 1 ?
             <Link
                 dangerouslySetInnerHTML={{__html: links[lastIndex].label}}
                 href={links[lastIndex].url}
