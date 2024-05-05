@@ -4,6 +4,7 @@ import styles from '/resources/css/Books/books.module.css';
 import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
 import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
 import {Pagination} from "@/Components/Pagination.jsx";
+import Filters from "@/Components/Filters.jsx";
 
 export default function Books({ books, auth}) {
 
@@ -27,7 +28,9 @@ export default function Books({ books, auth}) {
                 <Pagination links={books.links} currentPage={books.current_page} />
                 </span>
             </div>
-            <div className={styles.filterContainer}></div>
+            <div className={styles.filterContainer}>
+                <Filters></Filters>
+            </div>
         </div>
     )
 
