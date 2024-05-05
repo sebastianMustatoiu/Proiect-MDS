@@ -21,12 +21,24 @@ class BookController extends Controller
                 ->orWhere('author','like','%'.request('search').'%');
         }
 
+        $categories = $query->pluck('category')->unique()->values();
+
+        $publishers = $query->pluck('publisher')->unique()->values();
+
+        $filters = [
+            'categories' => $categories,
+            'publishers' => $publishers,
+        ];
 
         $books = $query->paginate(20)->onEachSide(1)->withQueryString();
 
+
+
         return Inertia::render('Books/Books', [
             'books' => $books,
-            'queryParams' => request()->query() ?: null
+            'queryParams' => request()->query() ?: null,
+            'filters' => $filters,
+
         ]);
     }
 

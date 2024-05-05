@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->char('title',200);
             $table->char('author',200);
+            $table->char('category',200);
+            $table->char('publisher',200);
             $table->char('image',200);
             $table->longText('description')->nullable();
             $table->date('publication_date');
