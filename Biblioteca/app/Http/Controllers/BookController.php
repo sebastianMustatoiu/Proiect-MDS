@@ -27,19 +27,19 @@ class BookController extends Controller
         $publishers = $query->pluck('publisher')->unique()->values();
 
         $filters = [
-            'categories' => $categories,
-            'publishers' => $publishers,
+            'Categories' => $categories,
+            'Publishers' => $publishers,
         ];
 
-    if(request('categories')) {
-        $appliedCategories = explode('_', request('categories'));
+    if(request('Categories')) {
+        $appliedCategories = explode('_', request('Categories'));
         $query->whereIn('category', $appliedCategories);
     }
     else
         $appliedCategories = [];
 
-    if(request('publishers')) {
-        $appliedPublishers = explode('_', request('publishers'));
+    if(request('Publishers')) {
+        $appliedPublishers = explode('_', request('Publishers'));
         $query->whereIn('publisher', $appliedPublishers);
     }
     else
