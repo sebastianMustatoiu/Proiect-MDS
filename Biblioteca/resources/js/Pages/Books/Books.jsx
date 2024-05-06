@@ -6,7 +6,7 @@ import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
 import {Pagination} from "@/Components/Pagination.jsx";
 import Filters from "@/Components/Filters.jsx";
 
-export default function Books({ books, auth, filters}) {
+export default function Books({ books, auth, filters, queryParams}) {
 
     const content = (
         <div className={styles.pageContent}>
@@ -29,7 +29,7 @@ export default function Books({ books, auth, filters}) {
                 </span>
             </div>
             <div className={styles.filterContainer}>
-                <Filters  filters={filters}/>
+                <Filters  filters={filters} queryParams={queryParams}/>
             </div>
         </div>
     )
