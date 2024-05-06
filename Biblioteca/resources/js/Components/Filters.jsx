@@ -33,43 +33,32 @@ export default function Filters({ filters, queryParams}) {
     };
 
 
+    const renderFilter = (filterType) => {
+        return (
+            <ul className={styles.filterGroup} id={`${filterType}_filters`}>
+                <span className={styles.filterTitle}>{filterType}</span>
+                {filters[filterType].map((item, index) => (
+                    <li key={index} className={styles.filterOption}>
+                        <input
+                            type="checkbox"
+                            id={`${filterType}_${index}`}
+                            value={item}
+                            defaultChecked={queryParams[filterType] && valueExistsExactly(item, queryParams[filterType])}
+                            className={styles.filterBox}
+                            onChange={(e) => handleCheckbox(e.target)}
+                        />
+                        <label htmlFor={`${filterType}_${index}`}>{item}</label>
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
     return (
         <>
-            {filters.categories && filters.categories.length > 1 && (
-                <ul className={styles.filterGroup} id="category_filters">
-                    <span className={styles.filterTitle}>Categories</span>
-                    {filters.categories.map((category, index) => (
-                        <li key={index} className={styles.filterOption}>
-                            <input type="checkbox"
-                                   id={`category_${index}`}
-                                   value={category}
-                                   defaultChecked={queryParams['category'] && valueExistsExactly(category, queryParams['category']) }
-                                   className={styles.filterBox}
-                                   onChange={(e) => handleCheckbox(e.target)}
-                            />
-                            <label htmlFor={`category_${index}`}>{category}</label>
-                        </li>
-                    ))}
-                </ul>
-            )}
-
-            {filters.publishers && filters.publishers.length > 1 && (
-                <ul className={styles.filterGroup} id="publisher_filters">
-                    <span className={styles.filterTitle}>Publishers</span>
-                    {filters.publishers.map((publisher, index) => (
-                        <li key={index} className={styles.filterOption}>
-                            <input type="checkbox"
-                                   id={`publisher_${index}`}
-                                   value={publisher}
-                                   defaultChecked={queryParams['publisher'] && valueExistsExactly(publisher, queryParams['publisher']) }
-                                   className={styles.filterBox}
-                                   onChange={(e) => handleCheckbox(e.target)}
-                            />
-                            <label htmlFor={`publisher_${index}`}>{publisher}</label>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {Object.keys(filters).map((filterType) => (
+                filters[filterType] && filters[filterType].length > 1 && renderFilter(filterType)
+            ))}
         </>
     );
 }

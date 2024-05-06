@@ -31,15 +31,15 @@ class BookController extends Controller
             'publishers' => $publishers,
         ];
 
-    if(request('category')) {
-        $appliedCategories = explode('_', request('category'));
+    if(request('categories')) {
+        $appliedCategories = explode('_', request('categories'));
         $query->whereIn('category', $appliedCategories);
     }
     else
         $appliedCategories = [];
 
-    if(request('publisher')) {
-        $appliedPublishers = explode('_', request('publisher'));
+    if(request('publishers')) {
+        $appliedPublishers = explode('_', request('publishers'));
         $query->whereIn('publisher', $appliedPublishers);
     }
     else
