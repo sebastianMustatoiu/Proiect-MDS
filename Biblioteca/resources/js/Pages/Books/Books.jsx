@@ -9,6 +9,10 @@ import Filters from "@/Components/Filters.jsx";
 export default function Books({ books, auth, filters, queryParams}) {
 
     const content = (
+        <>
+            <Head>
+                <title> Biblioteca </title>
+            </Head>
         <div className={styles.pageContent}>
             <div className={styles.booksContainer}>
                 <div className={styles.booksGrid}>
@@ -32,6 +36,7 @@ export default function Books({ books, auth, filters, queryParams}) {
                 <Filters  filters={filters} queryParams={queryParams}/>
             </div>
         </div>
+    </>
     )
 
     return (

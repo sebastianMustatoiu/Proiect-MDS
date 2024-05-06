@@ -59,7 +59,6 @@ class BookController extends Controller
             'books' => $books,
             'queryParams' => request()->query() ?: null,
             'filters' => $filters,
-
         ]);
     }
 

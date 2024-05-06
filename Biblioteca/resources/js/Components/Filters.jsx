@@ -35,7 +35,7 @@ export default function Filters({ filters, queryParams}) {
 
     const renderFilter = (filterType) => {
         return (
-            <ul className={styles.filterGroup} id={`${filterType}_filters`}>
+            <ul className={styles.filterGroup} id={`${filterType}_filters`} key={`${filterType}_filters`}>
                 <span className={styles.filterTitle}>{filterType}</span>
                 {filters[filterType].map((item, index) => (
                     <li key={index} className={styles.filterOption}>

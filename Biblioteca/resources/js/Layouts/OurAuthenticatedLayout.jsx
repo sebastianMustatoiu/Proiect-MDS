@@ -1,5 +1,5 @@
 import styles from '/resources/css/Layouts/OurAuthenticatedLayout.module.css';
-import {Link, router, usePage} from "@inertiajs/react";
+import {Link, usePage} from "@inertiajs/react";
 
 export default function OurAuthenticatedLayout( {user, children, activeMenu} ) {
 
@@ -7,11 +7,6 @@ export default function OurAuthenticatedLayout( {user, children, activeMenu} ) {
 
     return (
         <>
-            <head>
-                <title> Biblioteca </title>
-                <link rel="stylesheet"
-                      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0"/>
-            </head>
             <div className={styles.headerSection}>
                 <Link href={route('books.index')} className={styles.headerTitle}> BIBLIOTECA</Link>
                 <form className={styles.searchBar}>
