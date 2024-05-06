@@ -29,7 +29,7 @@ export default function Filters({ filters, queryParams}) {
             }
         }
 
-        router.get(route('books.index'), queryParams);
+        router.get(route('books.index'), queryParams, {preserveScroll: true});
     };
 
 
