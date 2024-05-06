@@ -15,20 +15,26 @@ export default function Books({ books, auth, filters, queryParams}) {
             </Head>
         <div className={styles.pageContent}>
             <div className={styles.booksContainer}>
-                <div className={styles.booksGrid}>
-                    {books.data.map((book) => (
-                        <div key={book.id} className={styles.bookCard}>
-                            <img src={book.image} alt={book.title}/>
-                            <div className={styles.bookDetails}>
-                                <p className={styles.bookAuthor}>
-                                    {book.author},
-                                    <span className={styles.bookTitleItalic}> {book.title}</span>
-                                </p>
+                {books.data.length ?
+                    (
+                        <div className={styles.booksGrid}>
+                        {books.data.map((book) => (
+                            <div key={book.id} className={styles.bookCard}>
+                                <img src={book.image} alt={book.title}/>
+                                <div className={styles.bookDetails}>
+                                    <p className={styles.bookAuthor}>
+                                        {book.author},
+                                        <span className={styles.bookTitleItalic}> {book.title}</span>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-                <span className={styles.paginationContainer}>
+                        ))}
+                    </div>
+                    )
+                    :
+                    <div className={styles.notFound}> Sorry, we couldn't find any books matching your search.</div>
+            }
+            <span className={styles.paginationContainer}>
                 <Pagination links={books.links} currentPage={books.current_page} />
                 </span>
             </div>

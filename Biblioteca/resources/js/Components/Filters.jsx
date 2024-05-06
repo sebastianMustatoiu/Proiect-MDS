@@ -55,10 +55,14 @@ export default function Filters({ filters, queryParams}) {
     };
 
     return (
-        <>
-            {Object.keys(filters).map((filterType) => (
+    <>
+        {Object.keys(filters).some(filterType => filters[filterType].length > 1) ? (
+            Object.keys(filters).map((filterType) => (
                 filters[filterType] && filters[filterType].length > 1 && renderFilter(filterType)
-            ))}
-        </>
+            ))
+        ) : (
+            <div className={styles.notFound}>No filters to show</div>
+        )}
+    </>
     );
 }

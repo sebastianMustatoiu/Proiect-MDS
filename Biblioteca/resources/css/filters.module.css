@@ -25,3 +25,10 @@
 input[type='checkbox']:checked {
     background-color: #D3A0A0;
 }
+
+.notFound{
+    color: dimgray;
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 60px;
+}
