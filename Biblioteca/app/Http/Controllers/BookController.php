@@ -16,9 +16,11 @@ class BookController extends Controller
     {
         $query = book::query();
 
-        if(request('search')){
-            $query->where('title','like','%'.request('search').'%')
-                ->orWhere('author','like','%'.request('search').'%');
+        if (request('search')) {
+            $query->where(function($query) {
+                $query->where('title', 'like', '%'.request('search').'%')
+                    ->orWhere('author', 'like', '%'.request('search').'%');
+            });
         }
 
 
@@ -28,31 +30,19 @@ class BookController extends Controller
 
         $filters = [
             'Categories' => $categories,
-            'Publishers' => $publishers,
+            'Publishers' => $publishers
         ];
 
     if(request('Categories')) {
         $appliedCategories = explode('_', request('Categories'));
         $query->whereIn('category', $appliedCategories);
     }
-    else
-        $appliedCategories = [];
 
     if(request('Publishers')) {
         $appliedPublishers = explode('_', request('Publishers'));
         $query->whereIn('publisher', $appliedPublishers);
     }
-    else
-        $appliedPublishers = [];
-
-        if (count($appliedCategories) > 0){
-            $query->whereIn('category', $appliedCategories);
-        }
-
-        if (count($appliedPublishers) > 0){
-            $query->whereIn('publisher', $appliedPublishers);
-        }
-
+    
         $books = $query->paginate(20)->onEachSide(1)->withQueryString();
 
         return Inertia::render('Books/Books', [
