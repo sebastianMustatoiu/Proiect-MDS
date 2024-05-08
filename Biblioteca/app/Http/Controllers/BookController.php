@@ -42,7 +42,7 @@ class BookController extends Controller
         $appliedPublishers = explode('_', request('Publishers'));
         $query->whereIn('publisher', $appliedPublishers);
     }
-    
+
         $books = $query->paginate(20)->onEachSide(1)->withQueryString();
 
         return Inertia::render('Books/Books', [

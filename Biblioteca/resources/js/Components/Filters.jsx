@@ -29,6 +29,7 @@ export default function Filters({ filters, queryParams}) {
             }
         }
 
+        queryParams['page'] = null;
         router.get(route('books.index'), queryParams, {preserveScroll: true});
     };
 
