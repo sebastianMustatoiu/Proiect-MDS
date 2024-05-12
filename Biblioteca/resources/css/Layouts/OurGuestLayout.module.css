@@ -11,9 +11,8 @@
     display: flex;
     margin-left: 40px;
     margin-right: 310px;
-    width: 15vw;
+    width: 8vw;
     flex-shrink: 2;
-
 }
 
 .headerLogo img{
