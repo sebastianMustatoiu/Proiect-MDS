@@ -7,7 +7,9 @@ export default function OurGuestLayout( {children, activeMenu} ) {
     return (
         <>
             <div className={styles.headerSection}>
-                <Link href={route('books.index')} className={styles.headerTitle}> BIBLIOTECA</Link>
+                <Link href={route('books.index')} className={styles.headerLogo}>
+                    <img alt={'logo'} src={'/Images/logo.png'} />
+                </Link>
                 <form className={styles.searchBar}>
                     <div className={`${styles.iconSearch} material-symbols-outlined`}>
                         search
