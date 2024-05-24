@@ -1,8 +1,14 @@
-import {Link, usePage} from "@inertiajs/react";
-import styles from '/resources/css/Layouts/OurGuestLayout.module.css'
-export default function OurGuestLayout( {children, activeMenu} ) {
+import { Link, usePage } from "@inertiajs/react";
+import styles from '/resources/css/Layouts/OurGuestLayout.module.css';
+import { useState } from 'react';
 
-    const {queryParams} = usePage().props
+export default function OurGuestLayout({ children, activeMenu }) {
+    const { queryParams } = usePage().props;
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     return (
         <>
@@ -20,8 +26,16 @@ export default function OurGuestLayout( {children, activeMenu} ) {
                            defaultValue={queryParams?.search ? queryParams.search : ''}
                     />
                 </form>
-                <div className={`${styles.iconLarge} material-symbols-outlined`}>
-                    account_circle
+                <div className={styles.dropDown}>
+                    <div className={`${styles.iconLarge} material-symbols-outlined`} onClick={toggleMenu}>
+                        account_circle
+                    </div>
+                    {menuOpen && (
+                        <div className={styles.dropDownContent}>
+                            <Link href={route('register')}>Register</Link>
+                            <Link href={route('login')}>Login</Link>
+                        </div>
+                    )}
                 </div>
             </div>
             <nav className={styles.menu}>
@@ -31,12 +45,11 @@ export default function OurGuestLayout( {children, activeMenu} ) {
                 </div>
 
                 <div className={styles.rightButtons}>
-                    <Link href={route('login')}> LOGIN </Link>
-                    <Link href={route('register')}> REGISTER </Link>
+                    {/* Eliminat butoanele de LOGIN și REGISTER din meniul principal */}
                 </div>
             </nav>
 
             {children}
         </>
-    )
+    );
 }
