@@ -1,62 +1,85 @@
-body{
+body {
     background-color: #B2D8FA;
 }
 
-.contentFlex{
+.contentFlex {
     display: flex;
     width: 100%;
-    padding: 20px
+    padding: 20px;
 }
 
-.contentFlex img{
+.contentFlex img {
     width: 350px;
     height: 550px;
-
 }
 
-.detailsFlex{
+.detailsFlex {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     margin-left: 40px;
 }
 
-.bookTitle{
+.bookTitle {
     font-size: 40px;
     margin: 30px;
     text-align: center;
 }
-.detail{
+
+.detail {
     font-size: 20px;
     margin-bottom: 20px;
     width: 100%;
 }
 
-.detail label{
+.detail label {
     color: gray;
 }
 
-.detail p{
+.detail p {
     margin-bottom: 20px;
 }
 
-.description{
+.description {
     font-size: 20px;
-    margin-left: 10px;
-    margin-top: 60px;
-}
-.loanButton{
-    border: 1px solid rgb(14, 2, 73);
-    width: 120px;
-    height: 60px;
-    padding: 20px;
-    border-radius: 15px;
+    margin-top: 40px;
+    flex-grow: 1;
     text-align: center;
-    background-color: white;
-    cursor: pointer;
 }
 
-.loanButton:hover{
-    background-color: lightgrey;
+.loanButton {
+    width: 120px;
+    height: 60px;
+    padding: 16px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(14, 2, 73);
+    cursor: pointer;
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.loanButton:hover {
+    background-color: rgb(58, 46, 117);
     transition: 0.3s;
 }
+
+.descriptionBlock {
+    background-color: rgb(255, 239, 202);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-left: 40px;
+}
+
+.descriptionTitle {
+    font-size: 28px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
