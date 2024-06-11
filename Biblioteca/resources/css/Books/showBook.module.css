@@ -1,0 +1,62 @@
+body{
+    background-color: #B2D8FA;
+}
+
+.contentFlex{
+    display: flex;
+    width: 100%;
+    padding: 20px
+}
+
+.contentFlex img{
+    width: 350px;
+    height: 550px;
+
+}
+
+.detailsFlex{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.bookTitle{
+    font-size: 40px;
+    margin: 30px;
+    text-align: center;
+}
+.detail{
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.detail label{
+    color: gray;
+}
+
+.detail p{
+    margin-bottom: 20px;
+}
+
+.description{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 60px;
+}
+.loanButton{
+    border: 1px solid rgb(14, 2, 73);
+    width: 120px;
+    height: 60px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.loanButton:hover{
+    background-color: lightgrey;
+    transition: 0.3s;
+}

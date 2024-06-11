@@ -9,7 +9,7 @@
 
 .pageButton {
     margin: 0 10px;
-    background-color: #D3A0A0;
+    background-color: rgb(14, 2, 73);
     border-radius: 25px;
     padding: 7px 14px;
     font-size: 1.1em;
@@ -19,11 +19,11 @@
 }
 
 .pageButton:hover{
-    background-color: #c78585;
+    background-color: rgb(58, 46, 117);
 }
 
 .pageButton.active{
-    background-color: #b76262;
+    background-color: #483993;
     cursor: default;
 }
 

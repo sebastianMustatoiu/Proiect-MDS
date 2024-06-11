@@ -3,8 +3,7 @@
 import React from "react";
 import { useForm } from '@inertiajs/react';
 import styles from '/resources/css/Books/create.module.css'
-import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
-import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
+import Layout from "@/Layouts/Layout.jsx";
 
 export default function Create({auth}) {
     const { data, setData, post, reset, errors } = useForm({
@@ -82,16 +81,8 @@ const content = (
     </section>
 )
     return (
-        auth.user ?
-            <OurAuthenticatedLayout
-                user={auth.user}
-                activeMenu={"Add"}
-            >
-                {content}
-            </OurAuthenticatedLayout>
-            :
-            <OurGuestLayout activeMenu={"Add"}>
-                {content}
-            </OurGuestLayout>
+        <Layout activeMenu={"Home"} user={auth.user}>
+            {content}
+        </Layout>
     );
 }

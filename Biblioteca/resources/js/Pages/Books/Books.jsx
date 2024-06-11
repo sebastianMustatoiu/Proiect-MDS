@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, Head } from '@inertiajs/react';
 import styles from '/resources/css/Books/books.module.css';
-import OurAuthenticatedLayout from "@/Layouts/OurAuthenticatedLayout.jsx";
-import OurGuestLayout from "@/Layouts/OurGuestLayout.jsx";
+import Layout from "@/Layouts/Layout.jsx";
 import {Pagination} from "@/Components/Pagination.jsx";
 import Filters from "@/Components/Filters.jsx";
 
@@ -17,17 +16,17 @@ export default function Books({ books, auth, filters, queryParams}) {
             <div className={styles.booksContainer}>
                 {books.data.length ?
                     (
-                        <div className={styles.booksGrid}>
+                    <div className={styles.booksGrid}>
                         {books.data.map((book) => (
-                            <div key={book.id} className={styles.bookCard}>
-                                <img src={book.image} alt={book.title}/>
-                                <div className={styles.bookDetails}>
-                                    <p className={styles.bookAuthor}>
-                                        {book.author},
-                                        <span className={styles.bookTitleItalic}> {book.title}</span>
-                                    </p>
-                                </div>
-                            </div>
+                            <Link href={route('books.show', {book: book})} key={book.id} className={styles.bookCard}>
+                                    <img src={book.image} alt={book.title}/>
+                                    <div className={styles.bookDetails}>
+                                        <p className={styles.bookAuthor}>
+                                            {book.author},
+                                            <span className={styles.bookTitleItalic}> {book.title}</span>
+                                        </p>
+                                    </div>
+                            </Link>
                         ))}
                     </div>
                     )
@@ -46,16 +45,8 @@ export default function Books({ books, auth, filters, queryParams}) {
     )
 
     return (
-        <>
-            {auth.user ? (
-                <OurAuthenticatedLayout user={auth.user} activeMenu={"Home"}>
-                    {content}
-                </OurAuthenticatedLayout>
-            ) : (
-                <OurGuestLayout activeMenu={"Home"}>
-                    {content}
-                </OurGuestLayout>
-            )}
-        </>
+            <Layout activeMenu={"Home"} user={auth.user}>
+                {content}
+            </Layout>
     );
 }

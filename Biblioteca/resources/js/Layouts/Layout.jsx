@@ -1,8 +1,8 @@
 import { Link, usePage } from "@inertiajs/react";
-import styles from '/resources/css/Layouts/OurGuestLayout.module.css';
+import styles from '/resources/css/Layouts/Layout.module.css';
 import { useState } from 'react';
 
-export default function OurGuestLayout({ children, activeMenu }) {
+export default function Layout({ children, activeMenu, user }) {
     const { queryParams } = usePage().props;
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -30,10 +30,18 @@ export default function OurGuestLayout({ children, activeMenu }) {
                     <div className={`${styles.iconLarge} material-symbols-outlined`} onClick={toggleMenu}>
                         account_circle
                     </div>
-                    {menuOpen && (
+                    {menuOpen && !user && (
                         <div className={styles.dropDownContent}>
                             <Link href={route('register')}>Register</Link>
                             <Link href={route('login')}>Login</Link>
+                        </div>
+                    )}
+
+                    {menuOpen && user && (
+                        <div className={styles.dropDownContent}>
+                            <Link href={route('profile.edit')}> Profile </Link>
+                            <Link> My loans </Link>
+                            <Link method="post" href={route('logout')}> Log out </Link>
                         </div>
                     )}
                 </div>
