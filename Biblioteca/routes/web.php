@@ -22,6 +22,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('books', BookController::class)->except(['index']);
 
-Route::resource('loans', LoanController::class);
+Route::resource('loans', LoanController::class)->middleware('auth');
 
 require __DIR__.'/auth.php';

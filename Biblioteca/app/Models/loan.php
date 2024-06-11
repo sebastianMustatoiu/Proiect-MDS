@@ -13,4 +13,8 @@ class loan extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function book(){
+        return $this->belongsTo(book::class);
+    }
+
 }

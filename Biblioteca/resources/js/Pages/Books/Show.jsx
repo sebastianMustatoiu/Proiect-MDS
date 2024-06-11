@@ -25,7 +25,7 @@ export default function Show({book, auth}) {
                         <p>{book.publication_date}</p>
                     </div>
                     <div className={styles.loanButton}>
-                        <Link method="post"> Loan </Link>
+                        <Link method="post" href={route('loans.store', {book_id: book.id})}> Loan </Link>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@ export default function Show({book, auth}) {
             {book.description}
             </div>
         </>
-    )
+    );
     return (
         <Layout activeMenu={"None"} user={auth.user}>
             {content}

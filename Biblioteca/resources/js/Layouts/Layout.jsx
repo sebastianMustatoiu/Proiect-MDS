@@ -40,7 +40,7 @@ export default function Layout({ children, activeMenu, user }) {
                     {menuOpen && user && (
                         <div className={styles.dropDownContent}>
                             <Link href={route('profile.edit')}> Profile </Link>
-                            <Link> My loans </Link>
+                            <Link href={route('loans.index')}> My loans </Link>
                             <Link method="post" href={route('logout')}> Log out </Link>
                         </div>
                     )}

@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreignId('book_id')->constrained('books','id')->onDelete('cascade');
             $table->date('loan_date');
             $table->date('return_date');
+            $table->timestamps();
         });
     }
 

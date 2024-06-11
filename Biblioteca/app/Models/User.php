@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    public function loan(){
+    public function loans(){
         return $this->hasMany(Loan::class);
     }
     /**
