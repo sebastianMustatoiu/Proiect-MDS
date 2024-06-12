@@ -42,7 +42,7 @@ Pentru gestionarea taskurilor, am folosit Trello. Pe langa backlog principal, fi
 <img width="1680" alt="SCR-20240612-taip" src="https://github.com/sebastianMustatoiu/Proiect-MDS/assets/149588114/164894a1-7395-4e51-a659-21eb66331ced">
 
 
-## Diagrama baze de date
+## Diagrama baza de date
 
 ![image](https://github.com/sebastianMustatoiu/Proiect-MDS/assets/149588114/a55c5a7c-2aec-4d7e-866e-54b05ab85f04)
 
