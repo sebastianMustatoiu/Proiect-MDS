@@ -2,7 +2,6 @@
 
 Componenta :
 
-Virtejanu Larisa-Ioana, grupa 332;
 
 Istrate Alexandru-Cristian, grupa 331;
 
