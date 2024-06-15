@@ -11,6 +11,8 @@ Tema proiectului : Biblioteca online.
 
 Link Backlog: https://trello.com/b/UTkPktMe/sprint-board
 
+Demo: https://www.youtube.com/watch?v=PkutoRzc6vs
+
 ## User stories
 
 1. Ca un utilizator înregistrat, doresc să pot căuta și rezerva cărți online, astfel încât să pot accesa resursele bibliotecii în mod eficient.
